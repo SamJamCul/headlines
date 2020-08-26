@@ -8,7 +8,7 @@ const main = async () => {
   headlines = [...new Set(headlines)]
   const fs = require('fs');
   let file = fs.createWriteStream('headlines.txt');
-  headlines.forEach(value => file.write(`${value}\n`));
+  headlines.forEach(async (value) => await file.write(`${value}\n`));
   file.end();
   await browser.close()
 }
