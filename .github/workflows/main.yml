@@ -37,4 +37,9 @@ jobs:
         URL_PATH: news/weird
         API_KEY: ${{ secrets.API_KEY }}
       uses: ./actions
-  
+    - name: scrape-sport
+      env:
+        URL_PATH: sport
+        API_KEY: ${{ secrets.API_KEY }}
+      uses: ./actions
+
