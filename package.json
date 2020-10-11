@@ -1,0 +1,25 @@
+{
+  "name": "headlines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^7.19.0",
+    "puppeteer": "^5.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamJamCul/headlines.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamJamCul/headlines/issues"
+  },
+  "homepage": "https://github.com/SamJamCul/headlines#readme"
+}
