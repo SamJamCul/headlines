@@ -1,0 +1,9 @@
+name: Scrape
+description: scrape site for headlines
+inputs:
+  api_key:
+    description: 'api key for firebase'
+    required: true
+runs:
+  using: 'node12'
+  main: '../puppeteer/headlines.js'
