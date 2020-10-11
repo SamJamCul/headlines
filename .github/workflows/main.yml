@@ -23,8 +23,18 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - name: scrape-action
+    - name: scrape-default
       env:
-        api_key: ${{ secrets.API_KEY }}
+        API_KEY: ${{ secrets.API_KEY }}
       uses: ./actions
-      
+    - name: scrape-news
+      env:
+        URL_PATH: news
+        API_KEY: ${{ secrets.API_KEY }}
+      uses: ./actions
+    - name: scrape-weird
+      env:
+        URL_PATH: news/weird
+        API_KEY: ${{ secrets.API_KEY }}
+      uses: ./actions
+  

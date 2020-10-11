@@ -4,6 +4,9 @@ inputs:
   api_key:
     description: 'api key for firebase'
     required: true
+  path:
+    description: 'news site path'
+    required: false
 runs:
   using: 'node12'
   main: '../puppeteer/headlines.js'

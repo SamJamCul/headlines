@@ -19,8 +19,9 @@ let hash = crypto.createHash('sha1')
 const main = async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
-  await page.goto(`https://www.express.co.uk/${process.argv[2]}`)
-  let subheading = process.argv[2] == undefined ? "default" : `${process.argv[2].replace('/', '-')}`;
+  await page.goto(`https://www.express.co.uk/${process.env.URL_PATH}`)
+  let subheading = process.env.URL_PATH == undefined ? "default" : `${process.env.URL_PATH.replace('/', '-')}`;
+  console.log(subheading)
   let headlines = await page.$$eval("h4", elements=> elements.map(item=>item.textContent.trim()))
   headlines = [...new Set(headlines)]
 
