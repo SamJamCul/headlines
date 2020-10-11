@@ -1,10 +1,10 @@
+require('dotenv').config()
 const puppeteer = require('puppeteer')
 const firebase = require('firebase');
 const crypto = require('crypto')
-const apikey = require("./keyFile.js")
 
 var firebaseConfig = {
-  apiKey: apikey.APIKey,
+  apiKey: process.env.API_KEY,
   authDomain: "headlines-fa045.firebaseapp.com",
   projectId: "headlines-fa045",
   databaseURL: "https://headlines-fa045.firebaseio.com",
