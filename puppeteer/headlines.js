@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer')
 const firebase = require('firebase');
 const crypto = require('crypto')
+const apikey = require("./keyFile.js")
 
 var firebaseConfig = {
-  // apiKey: "api-key",
+  apiKey: apikey.APIKey,
   authDomain: "headlines-fa045.firebaseapp.com",
   projectId: "headlines-fa045",
   databaseURL: "https://headlines-fa045.firebaseio.com",
@@ -27,12 +28,16 @@ const main = async () => {
   let file = fs.createWriteStream('headlines.txt');
   headlines.forEach(async (value) => await file.write(`${value}\n`));
   file.end();
-  
+  let i = 0
+
   for (const headline of headlines) {
     let hash = crypto.createHash('sha1')
-    database.ref(`headlines/${subheading}`).child(hash.update(headline).digest('hex').toString()).set(headline);
+    console.log(`${i}/${headlines.length - 1}`, headline)
+    i++
+    await database.ref(`headlines/${subheading}`).child(hash.update(headline).digest('hex').toString()).set(headline);
   }
-  await browser.close()
+  process.exit()
 }
+
 
 main()

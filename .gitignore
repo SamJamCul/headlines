@@ -1,3 +1,6 @@
 # node stuff
 node_modules/
 
+# api key stuff 
+puppeteer/keyFile.js
+
