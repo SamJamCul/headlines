@@ -4,7 +4,7 @@ const firebase = require('firebase');
 const crypto = require('crypto')
 
 var firebaseConfig = {
-  apiKey: process.env.INPUT_API_KEY,
+  apiKey: process.env.API_KEY,
   authDomain: "headlines-fa045.firebaseapp.com",
   projectId: "headlines-fa045",
   databaseURL: "https://headlines-fa045.firebaseio.com",

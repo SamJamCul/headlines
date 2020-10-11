@@ -24,6 +24,7 @@ jobs:
         node-version: '12.x'
     - run: npm install
     - name: scrape-action
+      env:
+        api_key: ${{ secrets.API_KEY }}
       uses: ./actions
-      with:
-        api_key: 'test'
+      
