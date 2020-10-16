@@ -19,6 +19,7 @@ let hash = crypto.createHash('sha1')
 const main = async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
+  page.setDefaultNavigationTimeout(0)
   await page.goto(`https://www.express.co.uk/${process.env.URL_PATH}`)
   let subheading = process.env.URL_PATH == undefined ? "default" : `${process.env.URL_PATH.replace('/', '-')}`;
   console.log(subheading)
